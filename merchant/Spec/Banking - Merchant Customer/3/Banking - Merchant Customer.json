@@ -1,0 +1,678 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Banking - Merchant Customer",
+    "description" : "Swagger Documentation for Banking - Merchant Customer",
+    "termsOfService" : "",
+    "version" : "v1.0.0"
+  },
+  "externalDocs" : {
+    "description" : "",
+    "url" : ""
+  },
+  "servers" : [ {
+    "url" : "https://acme-bank-hrrr.apiwiz.io/merchant-customer",
+    "variables" : { }
+  } ],
+  "paths" : {
+    "/api/1.0/customers" : {
+      "get" : {
+        "tags" : [ ],
+        "summary" : "Retrieve a customer list",
+        "description" : "Retrieve a customer list\n",
+        "operationId" : "Retrieve a customer list",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Retrieve a customer list\n",
+            "headers" : { },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CustomerResponseArray"
+                }
+              }
+            }
+          }
+        },
+        "callbacks" : { },
+        "deprecated" : false,
+        "security" : [ ],
+        "servers" : [ ]
+      },
+      "post" : {
+        "tags" : [ ],
+        "summary" : "Create a customer",
+        "description" : "Create a customer\n",
+        "operationId" : "Create a customer",
+        "parameters" : [ ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CustomerRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Create a customer\n",
+            "headers" : { },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CustomerResponse"
+                }
+              }
+            }
+          }
+        },
+        "callbacks" : { },
+        "deprecated" : false,
+        "security" : [ ],
+        "servers" : [ ]
+      },
+      "servers" : [ ],
+      "parameters" : [ ],
+      "extensions" : {
+        "x-description" : ""
+      }
+    },
+    "/api/1.0/customers/{customer_id}" : {
+      "get" : {
+        "tags" : [ ],
+        "summary" : "Retrieve a customer",
+        "description" : "Retrieve a customer\n",
+        "operationId" : "Retrieve a customer",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Retrieve a customer\n",
+            "headers" : { },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/RetriveCustomerResponse"
+                }
+              }
+            }
+          }
+        },
+        "callbacks" : { },
+        "deprecated" : false,
+        "security" : [ ],
+        "servers" : [ ]
+      },
+      "delete" : {
+        "tags" : [ ],
+        "summary" : "Delete a customer",
+        "description" : "Delete a customer",
+        "operationId" : "Delete a customer",
+        "parameters" : [ ],
+        "responses" : {
+          "204" : {
+            "description" : "Delete a customer\n",
+            "headers" : { }
+          }
+        },
+        "callbacks" : { },
+        "deprecated" : false,
+        "security" : [ ],
+        "servers" : [ ]
+      },
+      "patch" : {
+        "tags" : [ ],
+        "summary" : "Update a customer",
+        "description" : "Update a customer",
+        "operationId" : "Update a customer",
+        "parameters" : [ ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CustomerRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Update a customer\n",
+            "headers" : { }
+          }
+        },
+        "callbacks" : { },
+        "deprecated" : false,
+        "security" : [ ],
+        "servers" : [ ]
+      },
+      "servers" : [ ],
+      "parameters" : [ {
+        "$ref" : "#/components/parameters/customer_id_path"
+      } ],
+      "extensions" : {
+        "x-description" : ""
+      }
+    },
+    "/api/1.0/customers/{customer_id}/payment-methods" : {
+      "get" : {
+        "tags" : [ ],
+        "summary" : "Retrieve all payment methods of a customer",
+        "description" : "Retrieve all payment methods of a customer",
+        "operationId" : "Retrieve all payment methods of a customer",
+        "parameters" : [ {
+          "$ref" : "#/components/parameters/only_merchant_query"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Retrieve all payment methods of a customer\n",
+            "headers" : { },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AllPaymentsDetails"
+                }
+              }
+            }
+          }
+        },
+        "callbacks" : { },
+        "deprecated" : false,
+        "security" : [ ],
+        "servers" : [ ]
+      },
+      "servers" : [ ],
+      "parameters" : [ {
+        "$ref" : "#/components/parameters/customer_id_path"
+      } ],
+      "extensions" : {
+        "x-description" : ""
+      }
+    },
+    "/api/1.0/customers/{customer_id}/payment-methods/{payment_method_id}" : {
+      "get" : {
+        "tags" : [ ],
+        "summary" : "Retrieve a customer's payment method",
+        "description" : "Retrieve a customer's payment method",
+        "operationId" : "Retrieve a customer's payment method",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Retrieve a customer's payment method\n",
+            "headers" : { },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CustomerPayCard"
+                }
+              }
+            }
+          }
+        },
+        "callbacks" : { },
+        "deprecated" : false,
+        "security" : [ ],
+        "servers" : [ ]
+      },
+      "delete" : {
+        "tags" : [ ],
+        "summary" : "Delete a customer's payment method",
+        "description" : "Delete a customer's payment method",
+        "operationId" : "Delete a customer's payment method",
+        "parameters" : [ ],
+        "responses" : {
+          "204" : {
+            "description" : "Delete a customer's payment method",
+            "headers" : { }
+          }
+        },
+        "callbacks" : { },
+        "deprecated" : false,
+        "security" : [ ],
+        "servers" : [ ]
+      },
+      "patch" : {
+        "tags" : [ ],
+        "summary" : "Update a customer's payment method",
+        "description" : "Update a customer's payment method",
+        "operationId" : "Update a customer's payment method",
+        "parameters" : [ ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CustomerPayCard"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "202" : {
+            "description" : "Update a customer's payment method",
+            "headers" : { }
+          }
+        },
+        "callbacks" : { },
+        "deprecated" : false,
+        "security" : [ ],
+        "servers" : [ ]
+      },
+      "servers" : [ ],
+      "parameters" : [ {
+        "$ref" : "#/components/parameters/customer_id_path"
+      }, {
+        "$ref" : "#/components/parameters/payment_method_id_path"
+      } ],
+      "extensions" : {
+        "x-description" : ""
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "AllPaymentsDetails" : {
+        "type" : "array",
+        "items" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "string",
+              "example" : "648334a8-9546-a983-a81a-efc6d5bdd0be"
+            },
+            "type" : {
+              "type" : "string",
+              "example" : "REVOLUT_PAY"
+            },
+            "saved_for" : {
+              "type" : "string",
+              "example" : "MERCHANT"
+            },
+            "method_details" : {
+              "type" : "object",
+              "properties" : {
+                "created_at" : {
+                  "type" : "string",
+                  "example" : "2023-06-09T14:18:16.577888Z"
+                }
+              }
+            }
+          }
+        }
+      },
+      "AllPaymentMethods" : {
+        "type" : "array",
+        "items" : {
+          "type" : "object"
+        }
+      },
+      "MerchantPayCard" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "example" : "a04406c4-05be-498b-8207-cc1e02a9b3ca"
+          },
+          "type" : {
+            "type" : "string",
+            "example" : "CARD"
+          },
+          "saved_for" : {
+            "type" : "string",
+            "example" : "MERCHANT"
+          },
+          "method_details" : {
+            "type" : "object",
+            "properties" : {
+              "bin" : {
+                "type" : "string",
+                "example" : "459885"
+              },
+              "last4" : {
+                "type" : "string",
+                "example" : "7653"
+              },
+              "expiry_month" : {
+                "type" : "number",
+                "example" : 12
+              },
+              "expiry_year" : {
+                "type" : "number",
+                "example" : 2021
+              },
+              "cardholder_name" : {
+                "type" : "string",
+                "example" : "Example Holder"
+              },
+              "brand" : {
+                "type" : "string",
+                "example" : "MASTERCARD"
+              },
+              "funding" : {
+                "type" : "string",
+                "example" : "CREDIT"
+              },
+              "issuer" : {
+                "type" : "string",
+                "example" : "EXAMPLE ISSUER"
+              },
+              "issuer_country" : {
+                "type" : "string",
+                "example" : "GB"
+              },
+              "billing_address" : {
+                "type" : "object",
+                "properties" : {
+                  "street_line_1" : {
+                    "type" : "string",
+                    "example" : "Revolut"
+                  },
+                  "street_line_2" : {
+                    "type" : "string",
+                    "example" : "1 Canada Square"
+                  },
+                  "post_code" : {
+                    "type" : "string",
+                    "example" : "EC2V 6DN"
+                  },
+                  "city" : {
+                    "type" : "string",
+                    "example" : "London"
+                  },
+                  "region" : {
+                    "type" : "string",
+                    "example" : "Greater London"
+                  },
+                  "country_code" : {
+                    "type" : "string",
+                    "example" : "GB"
+                  }
+                }
+              },
+              "created_at" : {
+                "type" : "string",
+                "example" : "2023-03-24T14:15:22Z"
+              }
+            }
+          }
+        }
+      },
+      "CustomerPayCard" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "example" : "edef3ba4-60a0-4df3-8f12-e5fc858c2420"
+          },
+          "type" : {
+            "type" : "string",
+            "example" : "CARD"
+          },
+          "saved_for" : {
+            "type" : "string",
+            "example" : "CUSTOMER"
+          },
+          "method_details" : {
+            "type" : "object",
+            "properties" : {
+              "bin" : {
+                "type" : "string",
+                "example" : "459678"
+              },
+              "last4" : {
+                "type" : "string",
+                "example" : "6896"
+              },
+              "expiry_month" : {
+                "type" : "number",
+                "example" : 3
+              },
+              "expiry_year" : {
+                "type" : "number",
+                "example" : 2025
+              },
+              "cardholder_name" : {
+                "type" : "string",
+                "example" : "Example Customer"
+              },
+              "brand" : {
+                "type" : "string",
+                "example" : "VISA"
+              },
+              "funding" : {
+                "type" : "string",
+                "example" : "DEBIT"
+              },
+              "issuer" : {
+                "type" : "string",
+                "example" : "EXAMPLE ISSUER"
+              },
+              "issuer_country" : {
+                "type" : "string",
+                "example" : "GB"
+              },
+              "billing_address" : {
+                "type" : "object",
+                "properties" : {
+                  "street_line_1" : {
+                    "type" : "string",
+                    "example" : "7"
+                  },
+                  "street_line_2" : {
+                    "type" : "string",
+                    "example" : "Westferry Circus"
+                  },
+                  "post_code" : {
+                    "type" : "string",
+                    "example" : "E144HD"
+                  },
+                  "city" : {
+                    "type" : "string",
+                    "example" : "London"
+                  },
+                  "region" : {
+                    "type" : "string",
+                    "example" : "Greater London"
+                  },
+                  "country_code" : {
+                    "type" : "string",
+                    "example" : "GB"
+                  }
+                }
+              },
+              "created_at" : {
+                "type" : "string",
+                "example" : "2023-03-24T14:15:22Z"
+              }
+            }
+          }
+        }
+      },
+      "RevoultPay" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "example" : "648334a8-9546-a983-a81a-efc6d5bdd0be"
+          },
+          "type" : {
+            "type" : "string",
+            "example" : "REVOLUT_PAY"
+          },
+          "saved_for" : {
+            "type" : "string",
+            "example" : "MERCHANT"
+          },
+          "method_details" : {
+            "type" : "object",
+            "properties" : {
+              "created_at" : {
+                "type" : "string",
+                "example" : "2023-06-09T14:18:16.577888Z"
+              }
+            }
+          }
+        }
+      },
+      "RetriveCustomerResponse" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "example" : "6c7c97a8-cfc1-4cf3-8b38-26a74fdf1fae"
+          },
+          "full_name" : {
+            "type" : "string",
+            "example" : "Example Customer"
+          },
+          "business_name" : {
+            "type" : "string",
+            "example" : "Example Business"
+          },
+          "email" : {
+            "type" : "string",
+            "example" : "example.customer@example.com"
+          },
+          "phone" : {
+            "type" : "string",
+            "example" : "+441234567890"
+          },
+          "created_at" : {
+            "type" : "string",
+            "example" : "2020-06-24T12:03:39.979397Z"
+          },
+          "updated_at" : {
+            "type" : "string",
+            "example" : "2020-06-25T10:03:39.134417Z"
+          },
+          "payment_methods" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "string",
+                  "example" : "648334a8-9546-a983-a81a-efc6d5bdd0be"
+                },
+                "type" : {
+                  "type" : "string",
+                  "example" : "REVOLUT_PAY"
+                },
+                "saved_for" : {
+                  "type" : "string",
+                  "example" : "MERCHANT"
+                },
+                "method_details" : {
+                  "type" : "object",
+                  "properties" : {
+                    "created_at" : {
+                      "type" : "string",
+                      "example" : "2023-06-09T14:18:16.577888Z"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "CustomerResponseArray" : {
+        "type" : "array",
+        "items" : {
+          "type" : "object"
+        }
+      },
+      "CustomerResponse" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "example" : "6c7c97a8-cfc1-4cf3-8b38-26a74fdf1fae"
+          },
+          "full_name" : {
+            "type" : "string",
+            "example" : "Example Customer"
+          },
+          "business_name" : {
+            "type" : "string",
+            "example" : "Example Business"
+          },
+          "email" : {
+            "type" : "string",
+            "example" : "example.customer@example.com"
+          },
+          "phone" : {
+            "type" : "string",
+            "example" : "+441234567890"
+          },
+          "created_at" : {
+            "type" : "string",
+            "example" : "2020-06-24T12:03:39.979397Z"
+          },
+          "updated_at" : {
+            "type" : "string",
+            "example" : "2020-06-24T12:03:39.979397Z"
+          }
+        }
+      },
+      "CustomerRequest" : {
+        "type" : "object",
+        "properties" : {
+          "full_name" : {
+            "type" : "string",
+            "example" : "Example Customer"
+          },
+          "business_name" : {
+            "type" : "string",
+            "example" : "Example Business"
+          },
+          "email" : {
+            "type" : "string",
+            "example" : "customer@example.com"
+          },
+          "phone" : {
+            "type" : "string",
+            "example" : "+447123456789"
+          }
+        }
+      }
+    },
+    "responses" : { },
+    "parameters" : {
+      "customer_id_path" : {
+        "name" : "customer_id",
+        "in" : "path",
+        "required" : true,
+        "style" : "SIMPLE",
+        "explode" : false,
+        "schema" : {
+          "type" : "string",
+          "description" : ""
+        }
+      },
+      "only_merchant_query" : {
+        "name" : "only_merchant",
+        "in" : "query",
+        "required" : false,
+        "style" : "FORM",
+        "explode" : true,
+        "schema" : {
+          "type" : "string",
+          "description" : ""
+        }
+      },
+      "payment_method_id_path" : {
+        "name" : "payment_method_id",
+        "in" : "path",
+        "required" : true,
+        "style" : "SIMPLE",
+        "explode" : false,
+        "schema" : {
+          "type" : "string",
+          "description" : ""
+        }
+      }
+    },
+    "requestBodies" : { }
+  }
+}
